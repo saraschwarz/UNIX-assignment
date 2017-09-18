@@ -1,2 +1,6 @@
 # UNIX-assignment
-## Inspecting files
+## Data Inspection
+### fang_et_al_genotypes.txt
+
+
+### snp_position.txt

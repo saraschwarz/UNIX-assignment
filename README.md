@@ -1,12 +1,12 @@
 # UNIX-assignment
 ## Data Inspection
 ### fang_et_al_genotypes.txt
-#### Word count code: lists lines, words, and characters in file.
+#### Word count code: lists lines, words, and characters in file
 - $ wc fang_et_al_genotypes.txt
 	* 2783 lines
 	* 2744038 words
 	* 11051939 characters
-##### File size code: lists file size in human readable format (-h)
+#### File size code: lists file size in human readable format (-h)
 - $ du -h fang_et_al_genotypes.txt
 	* size of text file - 11M
 #### Counting columns: awk one liner that more accurately counts columns than head command
@@ -16,7 +16,7 @@
 - $ file fang_et_al_genotypes.txt
 	* ASCII text, with very long lines
 ### snp_position.txt
-#### Word count code: lists lines, words, and characters in file.
+#### Word count code: lists lines, words, and characters in file
 - $ wc snp_position.txt
 	* 984 lines
 	* 13198 words

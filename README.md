@@ -9,6 +9,8 @@
 	* size of text file - 11M
 - $ awk -F "\t" '{print NF; exit}' fang_et_al_genotypes.txt
 	* 986 columns
+- $ file fang_et_al_genotypes.txt
+	* ASCII text, with very long lines
 ### snp_position.txt
 - $ wc snp_position.txt
 	* 984 lines
@@ -18,3 +20,5 @@
 	* size of text file - 84K
 - $ awk -F "\t" '{print NF; exit}' snp_position.txt
 	* 15 comlumns
+- $ file snp_position.txt
+	* ASCII text

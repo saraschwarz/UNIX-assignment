@@ -22,3 +22,6 @@
 	* 15 comlumns
 - $ file snp_position.txt
 	* ASCII text
+## Data Processing
+### fang_et_al_genotypes.txt
+### snp_position.txt

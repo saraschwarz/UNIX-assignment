@@ -31,5 +31,14 @@
 - $ file snp_position.txt
 	* ASCII text
 ## Data Processing
-### fang_et_al_genotypes.txt
+### Teosinte Data
+**Pull out teosinte groups from main combined file (fang)**
+- $ grep -E "(ZMPBA|ZMPIL|ZMPJA)" fang_et_al_genotypes.txt > teosinte_genotypes.txt
+**Put headers saved from maize file into group file**
+- $ cat maize_header teosinte_genotypes.txt > teosinte_genotypes_header.txt
+**Double check number of columns is after pull and adding headers**
+- $ awk -F "\t" '{print NF; exit}' teostinte_genotypes_header.txt
+**Transpose teosinte genotypes before sorting and joining to snps files**
+- $ awk -f transpose.awk teosinte_genotypes_header.txt > transposed_teosinte_genotypes.txt
+
 ### snp_position.txt

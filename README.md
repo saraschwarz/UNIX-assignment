@@ -50,6 +50,12 @@
 - $ cut -f 1,3,4 joined_teosinte_header.txt > joined_teosinte_columns.txt
 #### **Separate chromosome files for teosinte**
 - $ for i in {1..10}; do awk '$2=='$i'' joined_teosinte_columns.txt > chr"$i"_teosinte_genotypes_final.txt; done
+#### **Sort all teosinte chromosome files by increasing position**
+- $ for i in {1..10}; do sort -k3,3n chr"$i"_teosinte_genotypes_final.txt > chr"$i"_teosinte_genotypes_increasing.txt; done
+#### **Sort all teosinte files by decreasing position**
+- $ for i in {1..10}; do sort -k3,3nr chr"$i"_teosinte_genotypes_final.txt > chr"$i"_teosinte_genotypes_decreasing.txt; done
+#### **Replace all "?" with "-" in decreasing position files**
+- $ for i in {1..10}; do sed 's/?/-/g' chr"$i"_teosinte_genotypes_decreasing.txt > chr"$i"_teosinte_genotypes_replace.txt; done
 ### Maize Data
 #### **Pull out maize groups from main combined file (fang)**
 - $ grep _ "(ZMMIL|ZMMLR|ZMMMR)" fang_et_al_genotypes.txt > maize_genotypes.txt
@@ -74,5 +80,12 @@
 #### **Cut and save SNP ID, Chromosome, and Position columns**
 - $ cut -f 1,3,4 final_maize.txt > columns_maize.txt
 #### **Separate maize files based on chromosome**
-for i in {1..10}; do awk '$2=='$i''columns_maize.txt > chr"$i"_maize_genotypes_final.txt; done
+- $ for i in {1..10}; do awk '$2=='$i''columns_maize.txt > chr"$i"_maize_genotypes_final.txt; done
+#### **Sort each chromosome file by increasing position for maize**
+- $ for i in {1..10}; do sort -k3,3n chr"$i"_maize_genotypes_final.txt > chr"$i"_maize_genotypes_increasing.txt; done
+#### **Sort each chromosome file by decreasing position for maize**
+- $ for i in {1..10}; do sort -k3,3nf chr"$i"_maize_genotypes_final.txt > chr"i"_maize_genotypes_decreasing.txt; done
+#### **Replace all "?" with "-" in the decreasing position files**
+- $ for i in {1..10}; do sed 's/?/-/g' chr"$i"_maize_genotypes_decreasing.txt > chr"$i"_maize_genotypes_replace.txt
+
 

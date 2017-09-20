@@ -56,6 +56,10 @@
 - $ for i in {1..10}; do sort -k3,3nr chr"$i"_teosinte_genotypes_final.txt > chr"$i"_teosinte_genotypes_decreasing.txt; done
 #### **Replace all "?" with "-" in decreasing position files**
 - $ for i in {1..10}; do sed 's/?/-/g' chr"$i"_teosinte_genotypes_decreasing.txt > chr"$i"_teosinte_genotypes_replace.txt; done
+#### **Creating file for unknowns for teosinte**
+- $ grep "unknown" joined_teosinte_columns.txt > unknown_teosinte.txt
+#### **Creating file for multiple unknown positions**
+- $ grep "multiple" joined_teosinte_columns.txt > multiple_teosinte.txt
 ### Maize Data
 #### **Pull out maize groups from main combined file (fang)**
 - $ grep _ "(ZMMIL|ZMMLR|ZMMMR)" fang_et_al_genotypes.txt > maize_genotypes.txt
@@ -87,5 +91,11 @@
 - $ for i in {1..10}; do sort -k3,3nf chr"$i"_maize_genotypes_final.txt > chr"i"_maize_genotypes_decreasing.txt; done
 #### **Replace all "?" with "-" in the decreasing position files**
 - $ for i in {1..10}; do sed 's/?/-/g' chr"$i"_maize_genotypes_decreasing.txt > chr"$i"_maize_genotypes_replace.txt
+#### **Creating file for unknown positions for maize**
+- $ grep "unknown" columns_maize.txt > unknown_maize.txt
+#### **Creating file for multiple unknown positions**
+- $ grep "multiple" columns_maize.txt > multiple_maize.txt
+
+
 
 

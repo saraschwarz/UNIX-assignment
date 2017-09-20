@@ -1,0 +1,17 @@
+PZA00030.11	multiple	
+PZA00270.3	multiple	
+PZA00296.6	2	multiple
+PZA00335.12	multiple	
+PZA00486.2	7	multiple
+PZA00493.1	4	multiple
+PZA00493.2	4	multiple
+PZA00493.5	4	multiple
+PZA00566.5	multiple	
+PZA00589.10	9	multiple
+PZA00589.8	9	multiple
+PZA00589.9	9	multiple
+PZA00636.5	multiple	
+PZA02948.19	6	multiple
+PZA02948.21	6	multiple
+PZA02948.22	6	multiple
+PZB00188.6	multiple	

@@ -36,9 +36,30 @@
 - $ grep -E "(ZMPBA|ZMPIL|ZMPJA)" fang_et_al_genotypes.txt > teosinte_genotypes.txt
 #### **Put headers saved from maize file into group file**
 - $ cat maize_header teosinte_genotypes.txt > teosinte_genotypes_header.txt
-#### **Double check number of columns is after pull and adding headers**
+#### **Double check number of columns after pull and adding headers**
 - $ awk -F "\t" '{print NF; exit}' teostinte_genotypes_header.txt
 #### **Transpose teosinte genotypes before sorting and joining to snps files**
 - $ awk -f transpose.awk teosinte_genotypes_header.txt > transposed_teosinte_genotypes.txt
-
-### snp_position.txt
+### Maize Data
+#### **Pull out maize groups from main combined file (fang)**
+- $ grep _ "(ZMMIL|ZMMLR|ZMMMR)" fang_et_al_genotypes.txt > maize_genotypes.txt
+#### **Pull headers so they can be added to new maize and teosinte group files**
+- $ head -n 1 fang_et_al_genotypes.txt > maize_header
+#### **Add headers to new maize group file**
+- $ cat maize_header maize_genotypes.txt > maize_genotypes_header.txt
+#### **Double check number of columns after pull and adding headers**
+- $ awk -F "\t" '{print NF; exit}' maize_genotypes_header.txt
+#### **Transpose maize genotypes before sorting and joining to snps files**
+- $ awk -f transpose.awk maize_genotypes_header.txt > transposed_maize genotypes.txt
+#### **Sort maize group file by snp locations without headers**
+- $ tail -n +4 transposed_maize_genotypes.txt | sort -k1,1 > maize_genotypes_sorted.txt
+#### **Save snp headers so they can be added to joined file**
+- $ head -n 1 snp_position.txt > snp_headers
+#### **Sort snp positions file without headers**
+- $ tail -n +2 snp_position.txt | sort -k1,1 > snp_positions_sorted.txt
+#### **Join maize and snp files**
+- $ join -t $'\t' -1 1 -2 1 snp_positions_sorted.txt maize_genotypes_sorted.txt > joined_maize.txt
+#### **Add headers to joined file so correct columns can be cut**
+- $ cat snp_headers joined_maize.txt > final_maize.txt
+#### **Cut and save SNP ID, Chromosome, and Position columns**
+- $ cut -f 1,3,4 final_maize.txt > columns_maize.txt

@@ -36,7 +36,7 @@
 - $ grep -E "(ZMPBA|ZMPIL|ZMPJA)" fang_et_al_genotypes.txt > teosinte_genotypes.txt
 #### **Put headers saved from maize file into group file**
 - $ cat maize_header teosinte_genotypes.txt > teosinte_genotypes_header.txt
-#### **Double check number of columns after pull and adding headers**
+#### **Double check number of columns after pulling groups and adding headers**
 - $ awk -F "\t" '{print NF; exit}' teostinte_genotypes_header.txt
 #### **Transpose teosinte genotypes before sorting and joining to snps files**
 - $ awk -f transpose.awk teosinte_genotypes_header.txt > transposed_teosinte_genotypes.txt
@@ -67,10 +67,10 @@
 - $ head -n 1 fang_et_al_genotypes.txt > maize_header
 #### **Add headers to new maize group file**
 - $ cat maize_header maize_genotypes.txt > maize_genotypes_header.txt
-#### **Double check number of columns after pull and adding headers**
+#### **Double check number of columns after pulling groups and adding headers**
 - $ awk -F "\t" '{print NF; exit}' maize_genotypes_header.txt
 #### **Transpose maize genotypes before sorting and joining to snps files**
-- $ awk -f transpose.awk maize_genotypes_header.txt > transposed_maize genotypes.txt
+- $ awk -f transpose.awk maize_genotypes_header.txt > transposed_maize_genotypes.txt
 #### **Sort maize group file by snp locations without headers**
 - $ tail -n +4 transposed_maize_genotypes.txt | sort -k1,1 > maize_genotypes_sorted.txt
 #### **Save snp headers so they can be added to joined file**
